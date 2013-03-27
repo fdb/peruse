@@ -1,0 +1,16 @@
+body {
+  background: #f8fcf7;
+}
+
+nav {
+  background: #595c64;
+  border-bottom: 4px solid #406abf;
+  padding: 3px 0;
+  color: #dedede;
+}
+
+nav a {
+  display: inline-block;
+  color: #dedede;
+  margin: 0 15px 0 0;
+}

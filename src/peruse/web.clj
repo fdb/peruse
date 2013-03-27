@@ -12,8 +12,13 @@
   (html5
     [:head
      [:title (str title " | Peruse")]
-     (include-css "/css/bootstrap.min.css")]
+     (include-css "/css/bootstrap.min.css")
+     (include-css "/css/peruse.css")]
     [:body
+     [:nav 
+      [:div.container
+       [:a {:href "/"} "Home"]
+       [:a {:href "/feeds"} "Feeds"]]]
      [:div.container
       [:h1 title]
       content]]))
@@ -33,7 +38,7 @@
     (layout "All Feeds"
             [:ul
              (for [feed feeds]
-               [:li [:a {:href "#"} (feed :title)]])])))
+               [:li [:a {:href (str "/feeds/" (feed :_id))} (feed :title)]])])))
 
 (defroutes routes
   (GET "/" [] (latest-entries))
